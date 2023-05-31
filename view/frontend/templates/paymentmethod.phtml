@@ -1,0 +1,36 @@
+<?php
+    /** @var \WolfSellers\PaymentLink\Block\PaymentMethod\PaymentMethod $block */
+    $card = $block->getCustomerCards();
+?>
+<h3> Método de pago actual</h3>
+<hr>
+<table>
+    <tr> <th colspan="3">Método de pago actual</th> </tr>
+    <?php if($card): ?>
+    <?php $cardData =$card->serializableData; ?>
+    <tr>
+        <th width="20"> <b><?=$card->brand?></b> </th>
+        <td width="60">
+            <b><?=$cardData['card_number']?></b><br>
+            <em><?= $card->bank_name ?></em> <br>
+            <small>Vencimiento: <?=$cardData['expiration_month']?>/<?=$cardData['expiration_year']?> </small>
+        </td>
+        <td width="20"> <button id="updateMethod" class="updateMethod">Cambiar Tarjeta</button> </td>
+    </tr>
+    <?php else:  ?>
+        <tr>
+            <td colspan="3">Aun no has registrado ninguna Tarjeta.</td>
+        </tr>
+    <?php endif; ?>
+</table>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "paymentMethodChange": {
+            }
+        }
+    }
+</script>
+
+
+

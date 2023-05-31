@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="paymentlink_notifications_paymentlink_create_template" label="payment_link_transactional" file="paymentlinkcreate.html" type="html" module="WolfSellers_PaymentLink" area="adminhtml"/>
+    <template id="paymentlink_notifications_paymentlink_store_notification_template" label="payment_link_transactional" file="confirmationOrderStoreNotification.html" type="html" module="WolfSellers_PaymentLink" area="adminhtml"/>
+    <template id="paymentlink_notifications_paymentlink_recurrence_notification_template" label="payment_link_transactional" file="recurrenceNotificationEmail.html" type="html" module="WolfSellers_PaymentLink" area="adminhtml"/>
+    <template id="paymentlink_notifications_paymentlink_successfulpayment_notification_template" label="payment_link_transactional" file="successfulpaymentNotificationEmail.html" type="html" module="WolfSellers_PaymentLink" area="adminhtml"/>
+    <template id="paymentlink_notifications_paymentlink_paymentdeclined_notification_template" label="payment_link_transactional" file="paymentDeclinedNotificationEmail.html" type="html" module="WolfSellers_PaymentLink" area="adminhtml"/>
+    <template id="paymentlink_notifications_paymentlink_cash_notification_template" label="payment_link_transactional" file="new_reference.html" type="html" module="WolfSellers_ExpiredReference" area="adminhtml"/>
+    <template id="paymentlink_notifications_paymentlink_update_card_notification_template" label="payment_link_transactional" file="updateCardNotification.html" type="html" module="WolfSellers_PaymentLink" area="adminhtml"/>
+</config>

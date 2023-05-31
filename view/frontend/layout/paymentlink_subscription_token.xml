@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="WolfSellers_PaymentLink::css/styles.css"/>
+    </head>
+
+    <referenceContainer name="content">
+        <block class="WolfSellers\PaymentLink\Block\Form\Openpay"
+               name="paymentlink_form_page"
+               template="WolfSellers_PaymentLink::form/openpayForm.phtml"
+               cacheable="false"
+        />
+        <block class="Magento\Framework\View\Element\Template"
+               name="expired_link"
+               template="WolfSellers_PaymentLink::form/expiredLink.phtml"
+        />
+    </referenceContainer>
+
+    <referenceContainer name="header.container" remove="true" />
+    <referenceContainer name="footer" remove="true" />
+</page>

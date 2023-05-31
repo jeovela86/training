@@ -1,0 +1,98 @@
+<?php
+
+/** @var $block WolfSellers\PaymentLink\Block\Form\Openpay */
+
+?>
+
+<div class="form-change-container">
+<div class="openpay-form">
+    <div class="bkng-tb-cntnt">
+        <div class="pymnts">
+            <form action="<?= $block->getUrl('paymentlink/subscription/pay'); ?>" method="POST" id="payment-form">
+                <input type="hidden" name="token_id" id="token_id">
+                <input type="hidden" name="customer_id" id="customer_id" value="<?= $block->getCustomerId() ?>">
+                <input type="hidden" name="process" id="process" value="<?= $block->getAction() ?>">
+                <?php if($block->getAction() != 'updateCard'):?>
+                <div class="copy">
+                    <h2>IMPORTANTE PARA FINALIZAR EL PAGO</h2>
+                    <p style="text-align: justify;">Para completar el proceso de tu suscripción debes diligenciar los datos que se requieren de tu tarjeta y el banco origen,
+                        adicionalmente completar la solicitud de compra. Una vez se realice el pago de manera exitosa, recibirás la información
+                        de confirmación a tu cuenta de correo electrónico registrada.
+                    </p>
+                </div>
+                <?php endif; ?>
+                <div class="type-of-target">
+                    <div class="header">
+                        <h3>Para que tengas una mejor experiencia en el registro del medio de pago de tu suscripción nos gustaría saber si tu tarjeta es digital o física.</h3>
+                        <p class="tooltip">?
+                            <span class="tooltiptext">
+                                <img class="icon-digital" src="../../../media/wysiwyg/icono-gv-tooltip-1.png"/> Mi tarjeta es digital:&nbsp;Es aquella tarjeta que no tienes físicamente en tus manos en forma de plástico,
+                                y que puedes hacer uso de ella en transacciones en línea: ya sea en un comercio electrónico, una app, un servicio de streaming
+                                o cualquier otra transacción en Internet. Con esta tipo de tarjeta la validación de compra se hace a través de un CVV, CVC o
+                                pin que genera la app o dispositivo de manera aleatoria denominado token.<br>
+                                <img class="icon-fisica" src="../../../media/wysiwyg/icono-gv-tooltip-2.png"/> Mi tarjeta es física:&nbsp;Es aquella tarjeta que tienes físicamente en tus manos en forma de plástico, que contiene un número,
+                                una fecha de vencimiento y un código de seguridad (CVV).
+                            </span>
+                        </p>
+                    </div>
+                    <div class="options">
+                        <input type="radio" id="tdigital" name="is_digital" value="1" class="radio required-entry" data-validate="{'validate-one-required-by-name':true}" >
+                        <label for="tdigital" title="Mi pago será realizado con la versión electrónica de una tarjeta física." > Mi tarjeta es digital</label><br>
+                        <input type="radio" id="tfisica" name="is_digital" value="0" class="radio required-entry" data-validate="{'validate-one-required-by-name':true}" >
+                        <label for="tfisica" title="Mi pago será realizado con el registro del plástico de mi tarjeta."> Mi tarjeta es física </label><br>
+                        <span style="display: none; color: red" id="validateIsDigital">Elige una opción</span>
+                    </div>
+                </div>
+                <div class="pymnt-itm card active">
+                    <h2>Tarjeta de crédito o débito</h2>
+                    <div class="pymnt-cntnt">
+                        <div class="card-expl">
+                            <div class="credit"><h4>Tarjetas de crédito</h4></div>
+                            <div class="debit"><h4>Tarjetas de débito</h4></div>
+                        </div>
+                        <div class="sctn-row">
+                            <div class="sctn-col l">
+                                <label>Nombre del titular<span>*</span></label><input type="text" placeholder="Como aparece en la tarjeta" autocomplete="off" data-openpay-card="holder_name">
+                                <span style="display: none; color: red" id="titular-error">Indique el Nombre del Titular</span>
+                            </div>
+                            <div class="sctn-col">
+                                <label>Número de tarjeta<span>*</span></label><input type="text" autocomplete="off" data-openpay-card="card_number"></div>
+                        </div>
+                        <div class="sctn-row">
+                            <div class="sctn-col l">
+                                <label>Fecha de expiración<span>*</span></label>
+                                <div class="sctn-col half l"><input type="text" placeholder="Mes" data-openpay-card="expiration_month" maxlength="2"></div>
+                                <div class="sctn-col half l"><input type="text" placeholder="Año" data-openpay-card="expiration_year" maxlength="2"></div>
+                            </div>
+                            <div class="sctn-col cvv"><label>Código de seguridad<span>*</span></label>
+                                <div class="sctn-col half l"><input type="text" placeholder="3 dígitos" autocomplete="off" data-openpay-card="cvv2" maxlength="3"></div>
+                            </div>
+                        </div>
+                        <div class="openpay"><div class="logo">Transacciones realizadas vía:</div>
+                            <div class="shield">Tus pagos se realizan de forma segura con encriptación de 256 bits</div>
+                        </div>
+                        <div class="sctn-row">
+                            <a class="button rght" id="pay-button">Pagar</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#payment-form": {
+            "paymentlinkOpenpayForm": {
+                "merchantId": "<?= $block->getMerchantId() ?>",
+                "apiKey": "<?= $block->getPublicKey() ?>",
+                "sandBoxMode": "<?= $block->isSandBoxMode() ?>"
+            }
+        },
+        "#isdigital-form": {
+            "isDigitalForm": {
+            }
+        }
+    }
+</script>

@@ -1,0 +1,198 @@
+<!--@subject {{trans "Oh oh debes actualizar tu medio de pago "}}  @-->
+{{template config_path="design/email/header_template"}}
+
+<table  class="first-table-content-new-order"  align="center" style="background: #384866 !important; font-family: 'Open Sans', Helvetica, Arial, sans-serif;  border-spacing: 15px;">
+    <tr>
+        <td align="center" style="border: 4px solid white;">
+            <table align="center" style="width:90%;">
+                <tr align="center">
+                    <td>
+                        <div style="width: 100%; padding: 10px; border-radius: 0px 0px 25px 25px; background: #415f80; color: white; font-size: 20px; font-weight: bold;">¡Hola, {{var customer.name}}! </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table style="margin-top: 20px; width:30%;">
+                <tr align="center">
+                    <td>
+                        <div style="border: 2px solid #fff; width: 100%; border-radius: 25px;">
+                            <img src="{{media url='emails/icono-actualizacion-tarjeta.png'}}" style="width: 80%; padding: 10px;" alt="Error en Tarjeta">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table style="width:100%;">
+                <tr align="center" style="background: #fa6502 !important;">
+                    <td>
+                        <table style="width: 90%">
+                            <tr align="center">
+                                <td style="vertical-align: middle;">
+                                    <p style="color: white; font-size: 15px;">
+                                        Hemos tenido una novedad con la tarjeta registrada {{var card.cc}}, para actualizar tu medio de pago y continuar
+                                        disfrutando de los beneficios que tenemos para ti, te invitamos a seguir el siguiente paso a paso:
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <table style="width: 90%">
+                            <tr align="center">
+                                <td style="vertical-align: middle;">
+                                    <p style="color: white; font-size: 15px;">
+
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table style="margin-top: 20px; width:100%; background: #2b3a56 !important;">
+                <tr>
+                    <td align="center">
+                        <table align="center" style="width:80%;">
+                            <tr align="center">
+                                <td align="center" style="width: 50%; vertical-align: middle; padding: 15px;">
+                                    <table style="width: 100%">
+                                        <tr>
+                                            <td align="center" style="width: 10%; vertical-align: middle;">
+                                                <span style="background: #fa6502; border-radius: 25px; font-size: 15px; padding: 10px;">1</span>
+                                            </td>
+                                            <td align="center" style="width: 90%; vertical-align: middle;">
+                                                <img src="{{media url='emails/icono-ingresa.png'}}" alt="" style="width: 90%; min-width: 100px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" colspan="2" style="width: 100%;">
+                                                <p style="font-size: 12px; color: white;">Ingresa a suscripciones.lafam.com.co</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td align="center" style="width: 50%; vertical-align: middle; padding: 15px;">
+                                    <table style="width: 100%">
+                                        <tr>
+                                            <td align="center" style="width: 10%; vertical-align: middle;">
+                                                <span style="background: #fa6502; border-radius: 25px; font-size: 15px; padding: 10px;">2</span>
+                                            </td>
+                                            <td align="center" style="width: 90%; vertical-align: middle;">
+                                                <img src="{{media url='emails/icono-cuenta.png'}}" alt="" style="width: 90%; min-width: 100px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" colspan="2" style="width: 100%;">
+                                                <p style="font-size: 12px; color: white;">Ingresa a tu cuenta.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr align="center">
+                                <td align="center" style="width: 50%; vertical-align: middle; padding: 15px;">
+                                    <table style="width: 100%">
+                                        <tr>
+                                            <td align="center" style="width: 10%; vertical-align: middle;">
+                                                <span style="background: #fa6502; border-radius: 25px; font-size: 15px; padding: 10px;">3</span>
+                                            </td>
+                                            <td align="center" style="width: 90%; vertical-align: middle;">
+                                                <img src="{{media url='emails/icono-dirigete-2.png'}}" alt="" style="width: 90%; min-width: 100px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" colspan="2" style="width: 100%;">
+                                                <p style="font-size: 12px; color: white;">Dirígete a la sección de información de pago.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td align="center" style="width: 50%; vertical-align: middle; padding: 15px;">
+                                    <table style="width: 100%">
+                                        <tr>
+                                            <td align="center" style="width: 10%; vertical-align: middle;">
+                                                <span style="background: #fa6502; border-radius: 25px; font-size: 15px; padding: 10px;">4</span>
+                                            </td>
+                                            <td align="center" style="width: 90%; vertical-align: middle;">
+                                                <img src="{{media url='emails/icono-edita-2.png'}}" alt="" style="width: 90%; min-width: 100px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" colspan="2" style="width: 100%;">
+                                                <p style="font-size: 12px; color: white;">Edita y verifica la información de tu método de pago elegido.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table style="margin-top: 20px; width:100%;">
+                <tr align="center">
+                    <td>
+                        <a href="https://cdn.shopify.com/s/files/1/0031/1817/0157/files/Terminos_y_Condiciones_Suscripcion_de_Lentes_y_Contrato_de_Suscripcion.pdf?v=1625672821" style="background-color: #fe5000; color: white; padding: 10px 12px; text-align: center; text-decoration: none; display: inline-block; border-radius: 25px; font-size: 12px; font-weight: bold;">IR A MI CUENTA</a>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table align="center" style="margin-top: 20px; width:100%;">
+                <tr style="background: #fa6502;">
+                    <td>
+                        <table align="center" style="width: 90%;">
+                            <tr align="center">
+                                <td style="width: 100%; vertical-align: middle;">
+                                    <p style="color: white;font-size: 18px; margin-top: 10px; font-weight: bold;">
+                                        ¡Continua disfrutando de tus beneficios de All Inclusive!
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table style="margin-top:10px; width:90%;">
+                <tr>
+                    <td>
+                        <p align="center" style="color: white; font-size: 10px;">
+                            He leído y acepto términos y condiciones. Y la política de privacidad y tratamiento de Datos.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <hr style="height:2px; width:90%; border-width:0; color:white; background-color:white">
+            <table style="margin-top:10px; width:90%;">
+                <tr align="center">
+                    <td>
+                        <p align="center" style="color: white; font-size: 10px;">
+                            Aplican términos y condiciones
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table style="margin-top:10px; width:100%;">
+                <tr align="center">
+                    <td>
+                        <a href="https://cdn.shopify.com/s/files/1/0031/1817/0157/files/Terminos_y_Condiciones_Suscripcion_de_Lentes_y_Contrato_de_Suscripcion.pdf?v=1625672821" style="background-color: #fe5000; color: white; padding: 10px 12px; text-align: center; text-decoration: none; display: inline-block; border-radius: 25px; font-size: 12px; font-weight: bold;">VER</a>
+                    </td>
+                </tr>
+            </table>
+            <table align="center" style="margin-top: 10px; width:100%;">
+                <tr>
+                    <td>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

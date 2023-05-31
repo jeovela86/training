@@ -1,0 +1,46 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="WolfSellers_PaymentLink::css/styles.css"/>
+    </head>
+    <update handle="customer_account"/>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Método de Pago</argument>
+            </action>
+        </referenceBlock>
+
+        <referenceContainer name="content">
+            <block class="WolfSellers\PaymentLink\Block\Form\Openpay"
+                   name="paymentlink_form_notification"
+                   template="WolfSellers_PaymentLink::form/paymentlink-notification.phtml"
+                   cacheable="false">
+            </block>
+
+            <!-- FORM UPDATE CVV-->
+            <block class="WolfSellers\PaymentLink\Block\Form\Openpay"
+                   name="paymentlink_form_cvv"
+                   template="WolfSellers_PaymentLink::form/openpayFormCVV.phtml"
+                   cacheable="false">
+                <arguments>
+                    <argument name="process" translate="true" xsi:type="string">updateCVV</argument>
+                </arguments>
+            </block>
+            <block class="WolfSellers\PaymentLink\Block\PaymentMethod\PaymentMethod" name="paymentmethod.change" cacheable="false"
+                   template="WolfSellers_PaymentLink::paymentmethod.phtml">
+                <arguments>
+                    <argument name="section_id" xsi:type="string">paymentmethodform</argument>
+                </arguments>
+            </block>
+            <!-- FORM CHANGE CARD-->
+            <block class="WolfSellers\PaymentLink\Block\Form\Openpay"
+                   name="paymentlink_form_page"
+                   template="WolfSellers_PaymentLink::form/openpayForm.phtml"
+                   cacheable="false">
+                <arguments>
+                    <argument name="process" translate="true" xsi:type="string">updateCard</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

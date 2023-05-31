@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <event name="sales_order_place_after">
+        <observer name="wolfsellers_paymentlink_stop_send_email_confirmation" instance="WolfSellers\PaymentLink\Observer\StopSendEmailConfirmation" />
+    </event>
+    <event name="sales_quote_payment_import_data_before">
+        <observer name="save_isdigital_info" instance="WolfSellers\PaymentLink\Observer\SaveIsDigital"/>
+    </event>
+</config>

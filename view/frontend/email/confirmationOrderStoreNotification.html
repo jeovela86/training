@@ -1,0 +1,98 @@
+<!--@subject {{var store.name}} Gran trabajo has realizado una nueva suscripción }  @-->
+{{template config_path="design/email/header_template"}}
+
+<table  class="first-table-content-new-order"  align="center" style="background: #384866 !important; font-family: 'Open Sans', Helvetica, Arial, sans-serif;  border-spacing: 15px;">
+    <tr>
+        <td align="center" style="border: 4px solid white;">
+            <table align="center" style="width:90%;">
+                <tr align="center">
+                    <td>
+                        <div style="width: 100%; padding: 10px; border-radius: 0px 0px 25px 25px; background: #415f80; color: white; font-size: 20px; font-weight: bold;">¡Hola {{var store.name}}!</div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table style="margin-top: 20px; width:100%;">
+                <tr align="center" style="background: #2b3a56 !important;">
+                    <td>
+                        <table style="width: 90%">
+                            <tr align="center">
+                                <td>
+                                    <p style="color: white; font-size: 15px;">
+                                        Registramos una nueva suscripción {{var subscription.consecutive_number}} por parte de {{var subscription.asesor_name}}, a continuación encuentras el detalle del nuevo suscriptor.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table align="center" style="margin-top: 20px; width:90%;">
+                <tr>
+                    <td align="center">
+                        <img src="{{media url='emails/icono-notificacion-a-tienda.png'}}" alt="" style="width: 30%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <div style="width: 80%; padding: 10px; border-radius:25px; background: white; color: white; font-size: 15px; border-top: 20px solid #415f80;">
+                            <table align="center" style="width: 70%; background: white; color: white;">
+                                <tr align="center">
+                                    <td style="padding: 10px; color: #415f80;">
+                                        Nombre del paciente: {{var customer.name}}
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td style="padding: 10px; color: #415f80;">
+                                        Identificación del paciente: {{var customer.id}}
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td style="padding: 10px; color: #415f80;">
+                                        Correo electrónico: {{var customer.email}}
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td style="padding: 10px; color: #415f80;">
+                                        Teléfono: {{var customer.telephone}}
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td style="padding: 10px; color: #415f80;">
+                                        Producto: {{var subscription.product}}
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td style="padding: 10px; color: #415f80;">
+                                        Fórmula: {{var subscription.formula}}
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td style="padding: 10px; color: #415f80;">
+                                        Frecuencia: {{var subscription.frequency}}
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td style="padding: 10px; color: #415f80;">
+                                        Entrega: {{var subscription.date_delivery}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table align="center" style="margin-top: 20px; width:100%;">
+                <tr>
+                    <td>
+                         
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

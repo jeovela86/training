@@ -1,0 +1,65 @@
+<?php
+
+/** @var $block WolfSellers\PaymentLink\Block\Form\Openpay */
+$cardData = $block->getCurrentCardData();
+/** @var \WolfSellers\PaymentLink\Helper\OrderHelper $notificationHelper */
+$notificationHelper = $this->helper('\WolfSellers\PaymentLink\Helper\OrderHelper');
+
+?>
+<?php if($cardData && $notificationHelper->updateCVV()): ?>
+<div class="form-isdigital-container">
+    <div class="openpay-form">
+        <div class="bkng-tb-cntnt">
+            <div class="pymnts">
+                <form method="POST" data-mage-init='{"validation": {}}' id="digital-form">
+                    <input type="hidden" name="customer_id" id="customer_id" value="<?= $block->getCustomerId() ?>">
+                    <?php if($block->getAction() != 'updateCard'):?>
+                    <?php endif; ?>
+                    <div class="pymnt-itm card active">
+                        <h2>Tarjeta de crédito o débito</h2>
+                        <div class="pymnt-cntnt">
+                            <div class="card-expl">
+                                <div class="credit"><h4>Tarjetas de crédito</h4></div>
+                                <div class="debit"><h4>Tarjetas de débito</h4></div>
+                            </div>
+                            <div class="sctn-row">
+                                <div class="sctn-col l">
+                                    <label>Nombre del titular<span>*</span></label><input type="text" placeholder="Como aparece en la tarjeta" autocomplete="off"  readonly value="<?= $cardData['holder_name'] ?>">
+                                    <span style="display: none; color: red" id="titular-error">Indique el Nombre del Titular</span>
+                                </div>
+                                <div class="sctn-col">
+                                    <label>Número de tarjeta<span>*</span></label><input type="text" autocomplete="off" readonly value="<?= $cardData['card_number'] ?>"></div>
+                            </div>
+                            <div class="sctn-row">
+                                <div class="sctn-col l">
+                                    <label>Fecha de expiración<span>*</span></label>
+                                    <div class="sctn-col half l"><input type="text" placeholder="Mes" readonly value="<?= $cardData['expiration_month'] ?>"></div>
+                                    <div class="sctn-col half l"><input type="text" placeholder="Año" readonly value="<?= $cardData['expiration_year'] ?>"></div>
+                                </div>
+                                <div class="sctn-col cvv"><label>Código de seguridad<span>*</span></label>
+                                    <div class="sctn-col half l"><input type="text" placeholder="3 dígitos" autocomplete="off" name="CxsEe" id="CxsEe" data-validate="{required:true, minlength:3,maxlength:3}" class="validate-number"></div>
+                                </div>
+                            </div>
+                            <div class="openpay"><div class="logo">Transacciones realizadas vía:</div>
+                                <div class="shield">Tus pagos se realizan de forma segura con encriptación de 256 bits</div>
+                            </div>
+                            <div class="sctn-row">
+                                <a class="button rght" id="update-button">Actualizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "paymentlinkUpdateCVV": {
+        }
+    }
+}
+</script>
+
+<?php endif; ?>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="paymentlink_success_charge">
+        <observer name="paymentlink_createshipment_delivered_in_store" instance="WolfSellers\PaymentLink\Observer\ChargeConfirmationObserver" />
+        <observer name="paymentlink_create_invoice" instance="WolfSellers\PaymentLink\Observer\CreateInvoiceObserver" />
+    </event>
+
+</config>

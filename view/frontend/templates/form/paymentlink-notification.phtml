@@ -1,0 +1,20 @@
+<?php
+
+/** @var $block WolfSellers\PaymentLink\Block\Form\Openpay */
+
+/** @var \WolfSellers\PaymentLink\Helper\OrderHelper $notificationHelper */
+$notificationHelper = $this->helper('\WolfSellers\PaymentLink\Helper\OrderHelper');
+
+?>
+<?php if($notificationHelper->updateCVV()):?>
+<div class="alert alert-warning">
+    Para registrar tu método de pago correctamente se require una actualización del código de seguridad de tu tarjeta (CVV).
+</div>
+<?php endif; ?>
+<?php if($notificationHelper->updateCard()):?>
+<div class="alert alert-warning">
+    *Se require una actualización de los datos de tu tarjeta.
+</div>
+<?php endif; ?>
+<br>
+

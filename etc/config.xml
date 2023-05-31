@@ -1,0 +1,44 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <paymentlink>
+                <model>WolfSellers\PaymentLink\Model\Payment\PaymentLink</model>
+                <active>0</active>
+                <title>Link de Pago</title>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>Offline</group>
+            </paymentlink>
+        </payment>
+        <paymentlink_notifications>
+            <paymentlink_create>
+                <template>paymentlink_notifications_paymentlink_create_template</template>
+                <payment_link_email_copy>latamclscupones@grandvision.com</payment_link_email_copy>
+                <payment_link_resend_times>10</payment_link_resend_times>
+            </paymentlink_create>
+            <paymentlink_store_notification>
+                <template>paymentlink_notifications_paymentlink_store_notification_template</template>
+            </paymentlink_store_notification>
+            <paymentlink_recurrence_notification>
+                <template>paymentlink_notifications_paymentlink_recurrence_notification_template</template>
+                <sender>general</sender>
+            </paymentlink_recurrence_notification>
+            <paymentlink_update_card_notification>
+                <template>paymentlink_notifications_paymentlink_update_card_notification_template</template>
+                <sender>general</sender>
+            </paymentlink_update_card_notification>
+            <paymentlink_successfulpayment_notification>
+                <template>paymentlink_notifications_paymentlink_successfulpayment_notification_template</template>
+            </paymentlink_successfulpayment_notification>
+            <paymentlink_paymentdeclined_notification>
+                <template>paymentlink_notifications_paymentlink_paymentdeclined_notification_template</template>
+            </paymentlink_paymentdeclined_notification>
+            <paymentlink_cash_notification>
+                <template>paymentlink_notifications_paymentlink_cash_notification_template</template>
+            </paymentlink_cash_notification>
+            <paymentlink_configuration>
+                <payment_link_validity>24</payment_link_validity>
+            </paymentlink_configuration>
+        </paymentlink_notifications>
+    </default>
+</config>
