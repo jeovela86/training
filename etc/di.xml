@@ -16,7 +16,4 @@
             </argument>
         </arguments>
     </type>
-    <type name="Magento\Customer\CustomerData\Customer">
-        <plugin name="paymentlink_notifications" type="WolfSellers\PaymentLink\Plugin\SectionData" disabled="false" sortOrder="20"/>
-    </type>
 </config>

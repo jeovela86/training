@@ -8,8 +8,6 @@ use Magento\Store\Model\ScopeInterface;
 use WolfSellers\PaymentLink\Helper\LinkUtils;
 use Magento\Customer\Model\Session;
 use Magento\Framework\View\Element\Template;
-use WolfSellers\OpenpaySubscriptions\Helper\Order;
-use WolfSellers\OpenpaySubscriptions\Helper\OpenpayAPI;
 
 class Openpay extends Template
 {
@@ -35,28 +33,16 @@ class Openpay extends Template
     /** string */
     protected $_action;
 
-    /**
-     * @var Order
-     */
-    protected $_helperSubscription;
-
-    /** @var OpenpayAPI */
-    protected $_openpayAPI;
-
     public function __construct(
         Context $context,
         LinkUtils $linkUtils,
         Session $customerSession,
-        Order $helperSubscription,
-        OpenpayAPI $openpayAPI,
         array $data = []
     ) {
         parent::__construct($context,$data);
 
         $this->_linkUtils = $linkUtils;
         $this->_customerSession = $customerSession;
-        $this->_helperSubscription = $helperSubscription;
-        $this->_openpayAPI = $openpayAPI;
 
         $customerId = $this->_request->getParam('d');
 
@@ -151,20 +137,7 @@ class Openpay extends Template
      * @throws \Magento\Framework\Validator\Exception
      */
     public function getCurrentCardData(){
-        $customerId = $this->_customerSession->getCustomerId();
-        $openpayCustomerId = $this->_openpayAPI->hasOpenpayAccount($customerId);
-
-        if(!$openpayCustomerId){
-            return false;
-        }
-
-        $currentCard = $this->_openpayAPI->getCardList($openpayCustomerId->openpay_id);
-
-        if(!$currentCard){
-           return false;
-        }
-
-        return $currentCard[0]->serializableData;
+        return false;
     }
 
 }
