@@ -1,5 +1,5 @@
 {
-    "name": "wolfsellers-training/module-paymentlink",
+    "name": "wolfsellerstraining/module-paymentlink",
     "description": "Payment Link module",
     "require": {
         "php": ">=8.1.0",
